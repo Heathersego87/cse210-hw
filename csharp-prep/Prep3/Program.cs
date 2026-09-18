@@ -12,18 +12,21 @@ class Program
         string guess = Console.ReadLine();
         int firstGuess =  int.Parse(guess);
 
-        
-        if (firstGuess < firstNumber)
+        while (firstGuess != firstNumber)
         {
-            Console.WriteLine("Higher");
+            if (firstGuess < firstNumber)
+            {
+                Console.WriteLine("Higher");
+            }
+            else if(firstGuess > firstNumber)
+            {
+                Console.WriteLine("Lower");
+            }
+
+             Console.Write("Enter another guess:");
+            firstGuess = int.Parse(Console.ReadLine());
+    
         }
-        else if (firstGuess > firstNumber)
-        {
-            Console.WriteLine("Lower");
-        }
-        else
-        {
             Console.Write("You guessed it!");
         }
     }
-}
