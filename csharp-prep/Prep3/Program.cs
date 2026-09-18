@@ -4,21 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("What is the magic number?");
-        string magicNumber = Console.ReadLine();
-        int firstNumber =  int.Parse(magicNumber);
-
+        
         Console.Write("What is your guess? ");
         string guess = Console.ReadLine();
         int firstGuess =  int.Parse(guess);
 
-        while (firstGuess != firstNumber)
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(1, 101);
+
+        while (firstGuess != magicNumber)
         {
-            if (firstGuess < firstNumber)
+            if (firstGuess < magicNumber)
             {
                 Console.WriteLine("Higher");
             }
-            else if(firstGuess > firstNumber)
+            else if(firstGuess > magicNumber)
             {
                 Console.WriteLine("Lower");
             }
