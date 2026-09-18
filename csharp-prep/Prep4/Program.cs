@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
+//HeatherSego
 
 class Program
 {
     static void Main(string[] args)
     {
         List<int> numbers = new List<int>();
-        int userNumber = -1
+        int userNumber = -1;
         while (userNumber !=0)
         {
-            Console.Write("Type a number, choose 0 to stop");
+            Console.Write("Type a number, choose 0 to stop ");
             string userResponse = Console.ReadLine();
             userNumber = int.Parse(userResponse);
 
@@ -18,13 +19,22 @@ class Program
                 numbers.Add(userNumber);
             }
         }
-        int sum = 0;
+        int total = 0;
         foreach (int number in numbers)
         {
-            sum += number; 
+            total += number; 
         }
-        Console.WriteLine($"The total is: {sum}");
-        float average = (float)sum/numbers.Count;
+        Console.WriteLine($"The total is: {total}");
+        float average = (float)total/numbers.Count;
         Console.WriteLine($"The average is: {average}");
+        int largest = numbers[0];
+        foreach (int number in numbers)
+        {
+            if (number > largest)
+            {
+                largest = number;
+            }
+        }
+        Console.WriteLine($"The largest is: {largest}");
     }
 }
