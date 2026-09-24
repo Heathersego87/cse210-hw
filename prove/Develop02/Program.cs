@@ -1,5 +1,6 @@
 using System;
-
+using System.Security.Cryptography.X509Certificates;
+//Heather Sego
 class Program
 {
     static void Main(string[] args)
@@ -44,6 +45,16 @@ class Program
                 newEntry._promptText = prompt;
                 newEntry._entryText = response;
                 journal.AddEntry(newEntry);
+            }
+            else if (choice == "2")
+            {
+                journal.DisplayAll();
+            }
+            else if (choice == "4")
+            {
+                Console.WriteLine("What is the file name?");
+                string filename = Console.ReadLine();
+                journal.SaveToFile(filename);
             }
         }
     }
