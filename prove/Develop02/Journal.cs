@@ -10,7 +10,7 @@ public class Journal
             Console.WriteLine();
         }
     }
-    public void AddEdntry(Entry newEntry)
+    public void AddEntry(Entry newEntry)
     {
         _entries.Add(newEntry);
     }
