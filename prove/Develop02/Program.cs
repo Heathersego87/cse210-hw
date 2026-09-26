@@ -1,6 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 //Heather Sego
+//Exceeding requirements: Added a mood check-in and a thank-you message for journaling.
 class Program
 {
     static void Main(string[] args)
@@ -38,10 +39,16 @@ class Program
                 Console.Write(">");
 
                 string response = Console.ReadLine();
+                Console.WriteLine("How are feeling today?");
+
+                string mood = Console.ReadLine();
                 DateTime currentDate = DateTime.Now;
+
                 string date = currentDate.ToShortDateString();
                 Entry newEntry = new Entry();
+
                 newEntry._date = date;
+                newEntry._mood = mood;
                 newEntry._promptText = prompt;
                 newEntry._entryText = response;
                 journal.AddEntry(newEntry);
@@ -50,11 +57,21 @@ class Program
             {
                 journal.DisplayAll();
             }
+            else if (choice == "3")
+            {
+                Console.WriteLine("What is the name of the file?");
+                string filename = Console.ReadLine();
+                journal.LoadFromFile(filename);
+            }
             else if (choice == "4")
             {
                 Console.WriteLine("What is the file name?");
                 string filename = Console.ReadLine();
                 journal.SaveToFile(filename);
+            }
+            else if (choice == "5")
+            {
+                Console.WriteLine("Thanks for writing in your journal today!");
             }
         }
     }
