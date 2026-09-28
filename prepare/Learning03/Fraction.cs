@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 public class Fraction
 {
     private int _topNumber;
@@ -15,6 +17,22 @@ public class Fraction
     public Fraction (int top, int bottom)
     {
         _topNumber = top;
+        _bottomNumber = bottom;
+    }
+    public int GetTop()
+    {
+        return _topNumber;
+    }
+    public int GetBottom()
+    {
+        return _bottomNumber;
+    }
+    public void SetTop(int top)
+    {
+        _topNumber = top;
+    }
+    public void SetBottom(int bottom)
+    {
         _bottomNumber = bottom;
     }
 }
