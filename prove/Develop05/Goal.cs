@@ -13,11 +13,11 @@ public class Goal
     {
         return _name;
     }
-    private virtual int RecordEvent()
+    public virtual int RecordEvent()
     {
         return 0;
     }
-    public virtual bool Iscomplete()
+    public virtual bool IsComplete()
     {
         return false;
     }
